@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "nbdev-repro-cwd-err"
+  site-url: "https://fr1ll.github.io/nbdev-repro-cwd-err"
+  description: "reproduce an error involving current working directory (cwd)"
+  repo-branch: main
+  repo-url: "https://github.com/fr1ll/nbdev-repro-cwd-err"
