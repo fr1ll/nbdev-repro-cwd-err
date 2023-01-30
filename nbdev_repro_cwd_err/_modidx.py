@@ -5,4 +5,4 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://fr1ll.github.io',
                 'git_url': 'https://github.com/fr1ll/nbdev-repro-cwd-err',
                 'lib_path': 'nbdev_repro_cwd_err'},
-  'syms': {'nbdev_repro_cwd_err.core': {'nbdev_repro_cwd_err.core.foo': ('core.html#foo', 'nbdev_repro_cwd_err/core.py')}}}
+  'syms': {'nbdev_repro_cwd_err.core': {}}}
