@@ -4,4 +4,8 @@
 __all__ = ['foo']
 
 # %% ../nbs/00_core.ipynb 3
+from shutil import copytree
+from pathlib import Path
+
+# %% ../nbs/00_core.ipynb 4
 def foo(): pass
