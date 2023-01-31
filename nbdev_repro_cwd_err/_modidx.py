@@ -5,4 +5,6 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://fr1ll.github.io',
                 'git_url': 'https://github.com/fr1ll/nbdev-repro-cwd-err',
                 'lib_path': 'nbdev_repro_cwd_err'},
-  'syms': {'nbdev_repro_cwd_err.core': {}}}
+  'syms': { 'nbdev_repro_cwd_err.copytree': { 'nbdev_repro_cwd_err.copytree.copytree_agnostic': ( 'copytree.html#copytree_agnostic',
+                                                                                                  'nbdev_repro_cwd_err/copytree.py')},
+            'nbdev_repro_cwd_err.core': {}}}

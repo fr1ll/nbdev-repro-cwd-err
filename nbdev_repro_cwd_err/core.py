@@ -4,12 +4,20 @@
 __all__ = ['src', 'dest']
 
 # %% ../nbs/00_core.ipynb 3
-from shutil import copytree
+from fastcore.all import in_ipython
+import nbdev.config
+from . import copytree
 from pathlib import Path
 
+# %% ../nbs/00_core.ipynb 4
+if in_ipython():
+    copy_root_dir = Path(copytree.__file__).parents[1] 
+else:
+    copy_root_dir = Path(__file__).parents[1]
+
 # %% ../nbs/00_core.ipynb 6
-src = Path(__file__).parents[1] / "assets"
+src = Path(copy_root_dir) / "assets"
 dest = Path().cwd() / "output"
 
 # %% ../nbs/00_core.ipynb 7
-copytree(src, dest, dirs_exist_ok=True)
+copytree.copytree_agnostic(src, dest)
