@@ -6,6 +6,3 @@ website:
       - nbdev.yml
       - sidebar.yml
       - styles.css
-      - section: output
-        contents:
-          - output/example.json
