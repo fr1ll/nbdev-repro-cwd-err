@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "01_copytree.html",
+    "href": "01_copytree.html",
+    "title": "nbdev-repro-cwd-err",
+    "section": "",
+    "text": "This is copied from _copytree in nbdev.quarto.\nWe put this in a separate module for one main reason:\nWhen we import this module, we can use it’s __file__ attribute (available when you import anything) to define the source for copying our web files.\n\nsource\n\n\n\n copytree_agnostic (a, b)"
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "Intention for next cell:\nSet __file__ attribute if in the notebook. If in script, do not set because it already is set."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nbdev-repro-cwd-err",
+    "section": "",
+    "text": "The notebook nbs/00_core.ipynb reproduces an error with nbdev_readme I’m trying to understand in my clip-plot repo.\nIntended behavior: Copy some data from a path relative to code execution (the assets folder) into a code relative to the current working directory:\nfrom shutil import copytree\nfrom pathlib import Path\nsrc = Path(__file__).parents[1] / \"assets\"\ndest = Path().cwd() / \"output\"\ncopytree(src, dest, dirs_exist_ok=True)\nSince the __file__ attribute doesn’t exist in the notebook, I first set it to Path().cwd() in a cell with a #| hide directive.\nObservations: - The notebook runs fine on its own - nbdev_test passes - the script 00_core.py created by nbdev_export runs fine - nbdev_readme fails with this error due to 00_core.ipynb:\nNameError: name '__file__' is not defined\n\nIf I set __file__ to cwd without a #| hide directive, I get cwd as the root of my repo rather than as the nbds or other folder.\n\nBasic question: It looks like nbdev_readme runs 00_core.ipynb in iPython. What’s the best way to execute stuff that we don’t want to run in the script, such as setting __file__? What’s the best way to think about this?"
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "nbdev-repro-cwd-err",
+    "section": "Install",
+    "text": "Install\npip install nbdev_repro_cwd_err"
+  }
+]
